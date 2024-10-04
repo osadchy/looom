@@ -26,6 +26,32 @@ is a web-based ambient sound mixer that helps users create the perfect atmospher
 - Adjust the sliders to control the volume of each sound
 - Click on mixture presets to quickly combine complementary sounds
 
+  ## Adding New Audio Files
+
+To add new audio files to the Looom project:
+
+1. Place your audio files in the `library` folder. Organize them into subfolders based on their category (e.g., `library/rain/`, `library/forest/`, etc.).
+
+2. Update the `library.json` file in the root directory. This file should contain information about all available audio files. Here's an example structure:
+
+```json
+{
+  "library": {
+    "rain": ["rain1.mp3", "rain2.mp3"],
+    "forest": ["forest1.mp3", "forest2.mp3"],
+    "ocean": ["waves1.mp3", "waves2.mp3"]
+  }
+}
+```
+
+3. In the `script.js` file, the `fetch('library.json')` function loads this data and creates audio tracks for each category.
+
+4. Update the HTML in `index.html` to include new UI elements for your added sounds. Add new `<div class="audio-control">` elements within the existing structure.
+
+5. If you're adding new mixture presets, update the `mixtureController` object in `script.js` with new toggle functions, and add corresponding UI elements in `index.html`.
+
+Ensure that the filenames in the JSON match exactly with the files in your `library` folder.
+
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
