@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Looom - Ambient Sound Mixer</title>
+    <meta name="description" content="Looom is an ambient sound mixer that helps you create the perfect atmosphere for relaxation, focus, or sleep. Mix and match various nature and urban sounds.">
+    <meta name="keywords" content="ambient sounds, white noise, relaxation, focus, sleep aid, sound mixer">
+    <meta name="author" content="Looom by Osadchy Yuri">
+    <meta property="og:title" content="Looom - Ambient Sound Mixer">
+    <meta property="og:description" content="Create your perfect soundscape with Looom's ambient sound mixer. Ideal for relaxation, focus, or sleep.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.looom.app">
+    <meta property="og:image" content="og-image.png">
+    <link rel="canonical" href="https://www.looom.app">
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- Google Fonts Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-grey"> 
+    <div class="container mt-5">
+
+    <!-- Header -->
+    <script src="header.js"></script>       
+
+    <div class="text-center">
+        <a href="#" class="btn btn-dark p-10 mb-3"><i class="bi bi-shuffle"></i> Shuffle</a>
+        <a href="index.html" class="btn btn-dark p-10 mb-3"><i class="bi bi-stop-circle-fill"></i> Reset</a>
+    </div>
+    
+        <div class="text-center mb-4">
+            <h1 class="text-center text-black mb-4">Mixture</h1>
+        </div>
+
+        <div id="preset-container" class="row justify-content-center">
+
+            <!-- rain & thunder -->
+            <div class="col-md-4 col-sm-4 col-4 mb-3">
+                <a href="#" class="text-black text-decoration-none">
+                    <div class="card text-bg-light mb-3 text-center border border-light mixture-card" data-mixture="rainThunder" style="background-color: transparent;" onclick="mixtureController.toggleRainAndThunder()">
+                        <div class="card-body">
+                            <i class="material-icons-outlined fs-1 text-black" style="font-size: 32px;">thunderstorm</i>
+                            <p class="text-black">Rain & Thunder</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- ocean & wind  -->
+            <div class="col-md-4 col-sm-4 col-4 mb-3">
+                <a href="#" class="text-black text-decoration-none">
+                    <div class="card text-bg-light mb-3 text-center border border-light mixture-card" data-mixture="oceanWind" style="background-color: transparent;" onclick="mixtureController.toggleOceanAndWind()">
+                        <div class="card-body">
+                            <i class="material-icons-outlined fs-1 text-black" style="font-size: 32px;">air</i>
+                            <p class="text-black">Ocean & Wind</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- jungle & bird  -->
+            <div class="col-md-4 col-sm-4 col-4 mb-3">
+                <a href="#" class="text-black text-decoration-none">
+                    <div class="card text-bg-light mb-3 text-center border border-light mixture-card" data-mixture="jungleBird" style="background-color: transparent;" onclick="mixtureController.toggleJungleAndBird()">
+                        <div class="card-body">
+                            <i class="material-icons-outlined fs-1 text-black" style="font-size: 32px;">forest</i>
+                            <p class="text-black">Jungle & Bird</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- fire & river  -->
+            <div class="col-md-4 col-sm-4 col-4 mb-3">
+                <a href="#" class="text-black text-decoration-none">
+                    <div class="card text-bg-light mb-3 text-center border border-light mixture-card" data-mixture="fireRiver" style="background-color: transparent;" onclick="mixtureController.toggleFireAndRiver()">
+                        <div class="card-body">
+                            <i class="material-icons-outlined fs-1 text-black" style="font-size: 32px;">local_fire_department</i>
+                            <p class="text-black">Fire & River</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- volcano & rain  -->
+            <div class="col-md-4 col-sm-4 col-4 mb-3">
+                <a href="#" class="text-black text-decoration-none">
+                    <div class="card text-bg-light mb-3 text-center border border-light mixture-card" data-mixture="volcanoRain" style="background-color: transparent;" onclick="mixtureController.toggleVolcanoAndRain()">
+                        <div class="card-body">
+                            <i class="material-icons-outlined fs-1 text-black" style="font-size: 32px;">volcano</i>
+                            <p class="text-black">Volcano & Rain</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- coffee & office  -->
+            <div class="col-md-4 col-sm-4 col-4 mb-3">
+                <a href="#" class="text-black text-decoration-none">
+                    <div class="card text-bg-light mb-3 text-center border border-light mixture-card" data-mixture="coffeeOffice" style="background-color: transparent;" onclick="mixtureController.toggleCoffeeAndOffice()">
+                        <div class="card-body">
+                            <i class="material-icons-outlined fs-1 text-black" style="font-size: 32px;">local_cafe</i>
+                            <p class="text-black">Coffee & Office</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+        
+        <h1 class="text-center text-black mb-4">Library</h1>
+
+        <div class="row justify-content-center mb-3">
+            <div class="col-4">
+                <div class="card border border-light" style="background-color: #f8f9fa;">
+                    <div class="card-body text-black">
+                        <div class="audio-control" data-theme="Fire">
+                            <div class="d-flex align-items-center">
+                                <i class="material-icons-outlined fs-4" style="font-size: 32px;">local_fire_department</i>
+                                <label for="toggle1" class="text-black ms-2">Fire</label>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input type="checkbox" class="form-check-input toggle" id="toggle1">
+                            </div>
+                            <input type="range" class="form-range slider" id="slider1" min="0" max="100" value="50" style="appearance: none; background: transparent;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card border border-light" style="background-color: #f8f9fa;">
+                    <div class="card-body text-black">
+                        <div class="audio-control" data-theme="Bird">
+                            <div class="d-flex align-items-center">
+                                <i class="material-icons-outlined fs-4" style="font-size: 32px;">flutter_dash</i>
+                                <label for="toggle2" class="text-black ms-2">Bird</label>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input type="checkbox" class="form-check-input toggle" id="toggle2">
+                            </div>
+                            <input type="range" class="form-range slider" id="slider2" min="0" max="100" value="50" style="appearance: none; background: transparent;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card border border-light" style="background-color: #f8f9fa;">
+                    <div class="card-body text-black">
+                        <div class="audio-control" data-theme="Coffee">
+                            <div class="d-flex align-items-center">
+                                <i class="material-icons-outlined fs-4" style="font-size: 32px;">local_cafe</i>
+                                <label for="toggle3" class="text-black ms-2">Coffee</label>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input type="checkbox" class="form-check-input toggle" id="toggle3">
+                            </div>
+                            <input type="range" class="form-range slider" id="slider3" min="0" max="100" value="50" style="appearance: none; background: transparent;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center mb-3">
+            <div class="col-4">
+                <div class="card border border-light" style="background-color: #f8f9fa;">
+                    <div class="card-body text-black">
+                        <div class="audio-control" data-theme="Forest">
+                            <div class="d-flex align-items-center">
+                                <i class="material-icons-outlined fs-4" style="font-size: 32px;">eco</i>
+                                <label for="toggle4" class="text-black ms-2">Forest</label>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input type="checkbox" class="form-check-input toggle" id="toggle4">
+                            </div>
+                            <input type="range" class="form-range slider" id="slider4" min="0" max="100" value="50" style="appearance: none; background: transparent;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card border border-light" style="background-color: #f8f9fa;">
+                    <div class="card-body text-black">
+                        <div class="audio-control" data-theme="Jungle">
+                            <div class="d-flex align-items-center">
+                                <i class="material-icons-outlined fs-4" style="font-size: 32px;">forest</i>
+                                <label for="toggle5" class="text-black ms-2">Jungle</label>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input type="checkbox" class="form-check-input toggle" id="toggle5">
+                            </div>
+                            <input type="range" class="form-range slider" id="slider5" min="0" max="100" value="50" style="appearance: none; background: transparent;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card border border-light" style="background-color: #f8f9fa;">
+                    <div class="card-body text-black">
+                        <div class="audio-control" data-theme="Ocean">
+                            <div class="d-flex align-items-center">
+                                <i class="material-icons-outlined fs-4" style="font-size: 32px;">tsunami</i>
+                                <label for="toggle6" class="text-black ms-2">Ocean</label>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input type="checkbox" class="form-check-input toggle" id="toggle6">
+                            </div>
+                            <input type="range" class="form-range slider" id="slider6" min="0" max="100" value="50" style="appearance: none; background: transparent;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center mb-3">
+            <div class="col-4">
+                <div class="card border border-light" style="background-color: #f8f9fa;">
+                    <div class="card-body text-black">
+                        <div class="audio-control" data-theme="Office">
+                            <div class="d-flex align-items-center">
+                                <i class="material-icons-outlined fs-4" style="font-size: 32px;">business_center</i>
+                                <label for="toggle7" class="text-black ms-2">Office</label>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input type="checkbox" class="form-check-input toggle" id="toggle7">
+                            </div>
+                            <input type="range" class="form-range slider" id="slider7" min="0" max="100" value="50" style="appearance: none; background: transparent;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card border border-light" style="background-color: #f8f9fa;">
+                    <div class="card-body text-black">
+                        <div class="audio-control" data-theme="Rain">
+                            <div class="d-flex align-items-center">
+                                <i class="material-icons-outlined fs-4" style="font-size: 32px;">water_drop</i>
+                                <label for="toggle8" class="text-black ms-2">Rain</label>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input type="checkbox" class="form-check-input toggle" id="toggle8">
+                            </div>
+                            <input type="range" class="form-range slider" id="slider8" min="0" max="100" value="50" style="appearance: none; background: transparent;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card border border-light" style="background-color: #f8f9fa;">
+                    <div class="card-body text-black">
+                        <div class="audio-control" data-theme="River">
+                            <div class="d-flex align-items-center">
+                                <i class="material-icons-outlined fs-4" style="font-size: 32px;">water</i>
+                                <label for="toggle9" class="text-black ms-2">River</label>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input type="checkbox" class="form-check-input toggle" id="toggle9">
+                            </div>
+                            <input type="range" class="form-range slider" id="slider9" min="0" max="100" value="50" style="appearance: none; background: transparent;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center mb-3">
+            <div class="col-4">
+                <div class="card border border-light" style="background-color: #f8f9fa;">
+                    <div class="card-body text-black">
+                        <div class="audio-control" data-theme="Space">
+                            <div class="d-flex align-items-center">
+                                <i class="material-icons-outlined fs-4" style="font-size: 32px;">rocket_launch</i>
+                                <label for="toggle10" class="text-black ms-2">Space</label>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input type="checkbox" class="form-check-input toggle" id="toggle10">
+                            </div>
+                            <input type="range" class="form-range slider" id="slider10" min="0" max="100" value="50" style="appearance: none; background: transparent;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card border border-light" style="background-color: #f8f9fa;">
+                    <div class="card-body text-black">
+                        <div class="audio-control" data-theme="Thunder">
+                            <div class="d-flex align-items-center">
+                                <i class="material-icons-outlined fs-4" style="font-size: 32px;">thunderstorm</i>
+                                <label for="toggle11" class="text-black ms-2">Thunder</label>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input type="checkbox" class="form-check-input toggle" id="toggle11">
+                            </div>
+                            <input type="range" class="form-range slider" id="slider11" min="0" max="100" value="50" style="appearance: none; background: transparent;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card border border-light" style="background-color: #f8f9fa;">
+                    <div class="card-body text-black">
+                        <div class="audio-control" data-theme="Urban">
+                            <div class="d-flex align-items-center">
+                                <i class="material-icons-outlined fs-4" style="font-size: 32px;">location_city</i>
+                                <label for="toggle12" class="text-black ms-2">Urban</label>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input type="checkbox" class="form-check-input toggle" id="toggle12">
+                            </div>
+                            <input type="range" class="form-range slider" id="slider12" min="0" max="100" value="50" style="appearance: none; background: transparent;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center mb-3">
+            <div class="col-4">
+                <div class="card border border-light" style="background-color: #f8f9fa;">
+                    <div class="card-body text-black">
+                        <div class="audio-control" data-theme="Volcano">
+                            <div class="d-flex align-items-center">
+                                <i class="material-icons-outlined fs-4" style="font-size: 32px;">volcano</i>
+                                <label for="toggle13" class="text-black ms-2">Volcano</label>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input type="checkbox" class="form-check-input toggle" id="toggle13">
+                            </div>
+                            <input type="range" class="form-range slider" id="slider13" min="0" max="100" value="50" style="appearance: none; background: transparent;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card border border-light" style="background-color: #f8f9fa;">
+                    <div class="card-body text-black">
+                        <div class="audio-control" data-theme="Wind">
+                            <div class="d-flex align-items-center">
+                                <i class="material-icons-outlined fs-4" style="font-size: 32px;">air</i>
+                                <label for="toggle14" class="text-black ms-2">Wind</label>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input type="checkbox" class="form-check-input toggle" id="toggle14">
+                            </div>
+                            <input type="range" class="form-range slider" id="slider14" min="0" max="100" value="50" style="appearance: none; background: transparent;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <footer class="text-center mt-4 mb-4"><p class="text-muted" style="font-size: 14px;">Crafted with ❤️ by Osadchy Yuri</p></footer>
+
+    <script src="controller.js"></script>
+    <script src="footer.js"></script>
+</body>
+</html>
