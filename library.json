@@ -1,0 +1,99 @@
+{
+    "library": {
+        "bird": [
+            "bird.mp3",
+            "bird1.mp3",
+            "bird2.mp3",
+            "bird3.mp3",
+            "bird4.mp3"
+        ],
+        "coffee": [
+            "coffee.mp3",
+            "coffee1.mp3",
+            "coffee2.mp3",
+            "coffee3.mp3",
+            "coffee4.mp3"
+        ],
+        "fire": [
+            "fire.mp3",
+            "fire1.mp3",
+            "fire2.mp3",
+            "fire3.mp3",
+            "fire4.mp3"
+        ],
+        "forest": [
+            "forest.mp3",
+            "forest1.mp3",
+            "forest2.mp3",
+            "forest3.mp3"
+        ],
+        "jungle": [
+            "jungle.mp3",
+            "jungle1.mp3"
+        ],
+        "office": [
+            "office.mp3"
+        ],
+        "rain": [
+            "rain.mp3",
+            "rain1.mp3",
+            "rain2.mp3",
+            "rain3.mp3",
+            "rain4.mp3",
+            "rain5.mp3",
+            "rain6.mp3"
+        ],
+        "river": [
+            "river.mp3",
+            "river1.mp3",
+            "river2.mp3",
+            "river3.mp3"
+        ],
+        "ocean": [
+            "ocean.mp3",
+            "ocean1.mp3",
+            "ocean2.mp3",
+            "ocean3.mp3",
+            "ocean4.mp3",
+            "ocean5.mp3",
+            "ocean6.mp3",
+            "ocean7.mp3",
+            "ocean8.mp3",
+            "ocean9.mp3",
+            "ocean10.mp3"
+        ],
+        "space": [
+            "space.mp3",
+            "space1.mp3",
+            "space2.mp3",
+            "space3.mp3"
+        ],
+        "thunder": [
+            "thunder.mp3",
+            "thunder1.mp3",
+            "thunder2.mp3",
+            "thunder3.mp3",
+            "thunder4.mp3",
+            "thunder5.mp3"
+        ],
+        "urban": [
+            "urban.mp3",
+            "urban1.mp3",
+            "urban2.mp3",
+            "urban3.mp3",
+            "urban4.mp3",
+            "urban5.mp3"
+        ],
+        "volcano": [
+            "volcano.mp3",
+            "volcano1.mp3",
+            "volcano2.mp3",
+            "volcano3.mp3",
+            "volcano4.mp3"
+        ],
+        "wind": [
+            "wind.mp3",
+            "wind1.mp3"
+        ]
+    }
+}
