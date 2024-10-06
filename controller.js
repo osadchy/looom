@@ -2,31 +2,17 @@ class SoundController {
     constructor() {
         this.audioTracks = {};
         this.library = null;
-        this.cacheName = 'audio-cache-v1';
     }
 
     async initialize() {
         try {
             const response = await fetch('library.json');
             this.library = await response.json();
-            await this.precacheAudio();
             this.setupEventListeners();
-            console.log('Library loaded and audio precached:', this.library);
+            console.log('Library loaded:', this.library);
         } catch (error) {
-            console.error('Error loading the audio library or precaching:', error);
+            console.error('Error loading the audio library:', error);
         }
-    }
-
-    async precacheAudio() {
-        const cache = await caches.open(this.cacheName);
-        const audioPaths = [];
-        for (const theme in this.library.library) {
-            for (const track of this.library.library[theme]) {
-                audioPaths.push(`library/${theme}/${track}`);
-            }
-        }
-        await cache.addAll(audioPaths);
-        console.log('Audio files precached');
     }
 
     setupEventListeners() {
@@ -80,10 +66,10 @@ class SoundController {
         const audioPath = `library/${theme}/${randomTrack}`;
         console.log(`Attempting to play: ${audioPath}`);
 
-        try {
-            const audio = await this.getAudioFromCache(audioPath);
-            audio.loop = true;
+        const audio = new Audio(audioPath);
+        audio.loop = true;
 
+        try {
             this.audioTracks[theme] = audio;
             await audio.play();
             const volumeSlider = document.querySelector(`.audio-control[data-theme="${theme.charAt(0).toUpperCase() + theme.slice(1)}"] .slider`);
@@ -96,26 +82,6 @@ class SoundController {
         } catch (error) {
             console.error(`Error playing ${randomTrack}:`, error);
         }
-    }
-
-    async getAudioFromCache(audioPath) {
-        const cache = await caches.open(this.cacheName);
-        let response = await cache.match(audioPath);
-
-        if (!response) {
-            console.log(`${audioPath} not found in cache, fetching from network`);
-            response = await fetch(audioPath);
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            const clonedResponse = response.clone();
-            await cache.put(audioPath, clonedResponse);
-        } else {
-            console.log(`${audioPath} found in cache`);
-        }
-
-        const blob = await response.blob();
-        return new Audio(URL.createObjectURL(blob));
     }
 
     stopTrack(theme) {
@@ -372,12 +338,3 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     shuffleController.setupShuffleButton();
 });
-
-// document.addEventListener('DOMContentLoaded', function() {
-//     // Bootstrap carousel initialization
-//     const myCarouselElement = document.querySelector('#carousel');
-//     const carousel = new bootstrap.Carousel(myCarouselElement, {
-//         interval: 5000,
-//         touch: true
-//     });
-// });
